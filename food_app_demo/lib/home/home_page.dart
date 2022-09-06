@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app_demo/home/food_page_body.dart';
 import 'package:food_app_demo/untils/colors.dart';
 import 'package:food_app_demo/widgets/big_text.dart';
 import 'package:food_app_demo/widgets/small_text.dart';
@@ -38,8 +39,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ]),
                     Container(
-                      decoration: BoxDecoration(
-                        borderRadius: const BorderRadius.all( Radius.circular(15)),
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(15)),
                         color: AppColors.mainColor,
                       ),
                       child: IconButton(
@@ -48,7 +49,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ],
-                )
+                ),
+                const FoodPageBody(),
               ],
             ),
           ),
