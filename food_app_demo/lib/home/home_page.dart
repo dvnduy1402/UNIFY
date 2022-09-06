@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_app_demo/untils/colors.dart';
+import 'package:food_app_demo/widgets/big_text.dart';
+import 'package:food_app_demo/widgets/small_text.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,6 +14,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Home Page',
       home: Scaffold(
         body: SafeArea(
@@ -22,13 +26,21 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Column(
-                      children: const [Text('Contry'), Text('region')],
-                    ),
+                    Column(children: [
+                      BigText(
+                        text: 'Country',
+                        color: AppColors.mainColor,
+                        size: 30,
+                      ),
+                      SmaillText(
+                        text: 'Region',
+                        color: AppColors.mainBlackColor,
+                      ),
+                    ]),
                     Container(
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(15)),
-                        color: Colors.blue[400],
+                        borderRadius: const BorderRadius.all( Radius.circular(15)),
+                        color: AppColors.mainColor,
                       ),
                       child: IconButton(
                         icon: const Icon(Icons.search, color: Colors.white),
