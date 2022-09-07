@@ -98,3 +98,6 @@ fonts:
         weight: 700
       - asset: assets/font/Roboto-Black.ttf
         weight: 900
+
+assets:
+  - image/
