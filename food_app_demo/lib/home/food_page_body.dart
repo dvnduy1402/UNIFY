@@ -31,7 +31,6 @@ Widget _buildPageItem(int index) {
       color: index.isEven ? Color(0xFF69c5df) : Color(0xFF9294cc),
       image: const DecorationImage(
         image: AssetImage("assets/image/product1.png"),
-    
       ),
     ),
   );
