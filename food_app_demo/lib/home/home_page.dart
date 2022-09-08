@@ -31,9 +31,9 @@ class _HomePageState extends State<HomePage> {
                       BigText(
                         text: 'Country',
                         color: AppColors.mainColor,
-                        size: 30,
+                        size: 25,
                       ),
-                      SmaillText(
+                      SmallText(
                         text: 'Region',
                         color: AppColors.mainBlackColor,
                       ),

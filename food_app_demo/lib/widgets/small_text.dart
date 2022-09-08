@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SmaillText extends StatelessWidget {
+class SmallText extends StatelessWidget {
   Color? color;
   final String text;
   double size;
   double height;
 
-  SmaillText({
+  SmallText({
     Key? key,
     this.color = const Color(0xFFccc7c5),
     required this.text,
