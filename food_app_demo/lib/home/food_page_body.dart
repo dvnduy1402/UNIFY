@@ -14,7 +14,7 @@ class FoodPageBody extends StatefulWidget {
 
 class _FoodPageBodyState extends State<FoodPageBody> {
   PageController pageController = PageController(viewportFraction: 0.90);
-  var _currPage= 0.0;
+  var _currPage = 0.0;
 
   @override
   void initState() {
@@ -22,8 +22,14 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     super.initState();
     pageController.addListener(() {
       _currPage = pageController.page!;
-      print('this is current page'+ _currPage.toString());
     });
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    pageController.dispose();
   }
 
   @override
