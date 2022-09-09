@@ -1,3 +1,4 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:food_app_demo/untils/colors.dart';
 import 'package:food_app_demo/widgets/icon_and_text.dart';
@@ -21,7 +22,9 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     // TODO: implement initState
     super.initState();
     pageController.addListener(() {
-      _currPage = pageController.page!;
+      setState(() {
+        _currPage = pageController.page!;
+      });
     });
   }
 
@@ -34,7 +37,9 @@ class _FoodPageBodyState extends State<FoodPageBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Column(
+      children: [
+      Container(
       height: 320,
       margin: const EdgeInsets.only(top: 10),
       child: PageView.builder(
@@ -43,21 +48,33 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           itemBuilder: (context, position) {
             return _buildPageItem(position);
           }), //create a carousel
+    ),
+        DotsIndicator(
+          dotsCount: 5,
+          position: _currPage,
+          decorator: DotsDecorator(
+            activeColor: AppColors.mainColor,
+            size: const Size.square(9.0),
+            activeSize: const Size(18.0, 9.0),
+            activeShape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(5.0)),
+          ),
+        ),
+      ],
     );
   }
 }
 
 Widget _buildPageItem(int index) {
-  // container in carousel
   return Stack(
     children: [
       Container(
         height: 230, // height of 1st stack
         margin: const EdgeInsets.only(left: 5, right: 5),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(25),
+          borderRadius: BorderRadius.circular(20),
           color:
-              index.isEven ? const Color(0xFF69c5df) : const Color(0xFF9294cc),
+          index.isEven ? const Color(0xFF69c5df) : const Color(0xFF9294cc),
           image: const DecorationImage(
             fit: BoxFit.cover, //fit img = container
             image: AssetImage("assets/image/product1.png"),
@@ -65,13 +82,22 @@ Widget _buildPageItem(int index) {
         ),
       ),
       Align(
-        alignment: Alignment.bottomCenter, // align Container to conter bottom
+        alignment: Alignment.bottomCenter, // align Container to contain bottom
         child: Container(
           height: 120, // height of 2nd stack
           margin: const EdgeInsets.only(left: 20, right: 20, bottom: 15),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(25),
+            borderRadius: BorderRadius.circular(20),
             color: Colors.white,
+            boxShadow: const [
+              BoxShadow(
+                color: Color(0xFFe8e8e8),
+                // blurRadius: 5.0,
+                offset: Offset(0, 5),
+              )
+            ],
+
+
           ),
           child: Container(
             padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
@@ -109,7 +135,7 @@ Widget _buildPageItem(int index) {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: const [
                     IconAndText(
                         icon: Icons.circle_sharp,
                         text: 'Normal',
