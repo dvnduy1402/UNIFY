@@ -1,6 +1,8 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:food_app_demo/untils/colors.dart';
+import 'package:food_app_demo/untils/dimensions.dart';
+//import 'package:food_app_demo/untils/dimensions.dart';
 import 'package:food_app_demo/widgets/icon_and_text.dart';
 import 'package:food_app_demo/widgets/small_text.dart';
 
@@ -40,7 +42,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     return Column(
       children: [
       Container(
-      height: 320,
+      height: Dimensions.pageView,
       margin: const EdgeInsets.only(top: 10),
       child: PageView.builder(
           controller: pageController,
@@ -69,10 +71,10 @@ Widget _buildPageItem(int index) {
   return Stack(
     children: [
       Container(
-        height: 230, // height of 1st stack
+        height: Dimensions.pageViewContainer, // height of 1st stack
         margin: const EdgeInsets.only(left: 5, right: 5),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(Dimensions.radius20),
           color:
           index.isEven ? const Color(0xFF69c5df) : const Color(0xFF9294cc),
           image: const DecorationImage(
@@ -84,10 +86,10 @@ Widget _buildPageItem(int index) {
       Align(
         alignment: Alignment.bottomCenter, // align Container to contain bottom
         child: Container(
-          height: 120, // height of 2nd stack
+          height: Dimensions.pageViewTextContainer, // height of 2nd stack
           margin: const EdgeInsets.only(left: 20, right: 20, bottom: 15),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(Dimensions.radius20),
             color: Colors.white,
             boxShadow: const [
               BoxShadow(
@@ -108,7 +110,7 @@ Widget _buildPageItem(int index) {
                   text: 'PanCake',
                   color: AppColors.mainBlackColor,
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: Dimensions.height10),
                 Row(
                   children: [
                     Wrap(
@@ -118,7 +120,7 @@ Widget _buildPageItem(int index) {
                             color: AppColors.mainColor, size: 15),
                       ),
                     ),
-                    const SizedBox(width: 10),
+                    SizedBox(width: Dimensions.height10),
                     SmallText(text: '4.5'),
                     const SizedBox(
                       width: 10,
@@ -130,8 +132,8 @@ Widget _buildPageItem(int index) {
                     SmallText(text: 'comments')
                   ],
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: Dimensions.height20,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

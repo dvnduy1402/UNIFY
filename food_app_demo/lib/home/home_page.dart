@@ -1,8 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_demo/home/food_page_body.dart';
 import 'package:food_app_demo/untils/colors.dart';
+import 'package:food_app_demo/untils/dimensions.dart';
 import 'package:food_app_demo/widgets/big_text.dart';
 import 'package:food_app_demo/widgets/small_text.dart';
+import 'package:get/get.dart';
+
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Home Page',
+      home: HomePage(),
+    );
+  }
+}
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,10 +31,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Home Page',
-      home: Scaffold(
+    return
+       Scaffold(
         body: SafeArea(
           child: Container(
             margin: const EdgeInsets.only(top: 10, bottom: 5),
@@ -31,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                       BigText(
                         text: 'Country',
                         color: AppColors.mainColor,
-                        size: 25,
+                        size: Dimensions.font20,
                       ),
                       SmallText(
                         text: 'Region',
@@ -39,8 +54,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ]),
                     Container(
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(15)),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(Dimensions.radius15)),
                         color: AppColors.mainColor,
                       ),
                       child: IconButton(
@@ -55,7 +70,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
-      ),
-    );
+      );
+
   }
 }
