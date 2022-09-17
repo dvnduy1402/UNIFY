@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_demo/pages/home/food_page_body.dart';
-import 'package:food_app_demo/untils/colors.dart';
-import 'package:food_app_demo/untils/dimensions.dart';
+import 'package:food_app_demo/utils/colors.dart';
+import 'package:food_app_demo/utils/dimensions.dart';
 import 'package:food_app_demo/widgets/big_text.dart';
 import 'package:food_app_demo/widgets/small_text.dart';
 

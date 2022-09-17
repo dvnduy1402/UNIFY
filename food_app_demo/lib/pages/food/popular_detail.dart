@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_demo/untils/dimensions.dart';
+import 'package:food_app_demo/utils/dimensions.dart';
 import 'package:food_app_demo/widgets/app_icon.dart';
 
 class PopularFoodDetail extends StatelessWidget {
@@ -10,6 +10,7 @@ class PopularFoodDetail extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
+          //img of food
           Positioned(
             left: 0,
             right: 0,
@@ -24,6 +25,7 @@ class PopularFoodDetail extends StatelessWidget {
               ),
             ),
           ),
+          //iconbutton
           Positioned(
             top: Dimensions.height45,
             left: Dimensions.width20,
@@ -36,6 +38,8 @@ class PopularFoodDetail extends StatelessWidget {
               ],
             ),
           ),
+
+
         ],
       ),
     );
