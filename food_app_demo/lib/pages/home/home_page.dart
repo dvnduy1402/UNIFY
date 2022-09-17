@@ -1,23 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_demo/home/food_page_body.dart';
+import 'package:food_app_demo/pages/home/food_page_body.dart';
 import 'package:food_app_demo/untils/colors.dart';
 import 'package:food_app_demo/untils/dimensions.dart';
 import 'package:food_app_demo/widgets/big_text.dart';
 import 'package:food_app_demo/widgets/small_text.dart';
-import 'package:get/get.dart';
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Home Page',
-      home: HomePage(),
-    );
-  }
-}
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -64,7 +50,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               //showing the body
-              Expanded(
+              const Expanded(
                 child: SingleChildScrollView(
                   child: FoodPageBody(),
                 ),

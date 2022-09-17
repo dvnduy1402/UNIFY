@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 class Dimensions{
-  static double screenHeight = Get.context!.height;
+  static double screenHeight = Get.context!.height; //844
   static double screenWidth = Get.context!.width;
 
   //dynamic height padding and margin
@@ -9,8 +9,12 @@ class Dimensions{
   static double pageViewContainer = screenHeight/3.84; //844/220
   static double pageViewTextContainer = screenHeight/7.03; //844/1.2
   static double height10 = screenHeight/84.4;
-  static double height20 = screenHeight/42.2;
   static double height15 = screenHeight/56.2;
+  static double height20 = screenHeight/42.2;
+  static double height25 = screenHeight/33.7;
+  static double height35 = screenHeight/24.1;
+  static double height40 = screenHeight/21.1;
+  static double height45 = screenHeight/18.75;
 
   static double font20 = screenHeight/42.2;
   static double radius20 = screenHeight/42.2;
@@ -21,8 +25,13 @@ class Dimensions{
   static double width20 = screenHeight/42.2;
   //Icon size
   static double iconSize20 = screenHeight/35.17;
+  static double iconSize16 = screenHeight/52.75;
+
 
   //Listview size
-  static double ListViewImgSize = screenWidth/3.25;
-  static double ListViewTextIconSize = screenHeight/3.9;
+  static double listViewImgSize = screenWidth/3.25;
+  static double listViewTextContSize = screenHeight/3.9;
+
+  //popular food detail page
+  static double popularImgSize = screenHeight/2.41; //350
 }

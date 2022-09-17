@@ -5,7 +5,7 @@ import 'package:food_app_demo/untils/dimensions.dart';
 import 'package:food_app_demo/widgets/icon_and_text.dart';
 import 'package:food_app_demo/widgets/small_text.dart';
 
-import '../widgets/big_text.dart';
+import '../../widgets/big_text.dart';
 
 class FoodPageBody extends StatefulWidget {
   const FoodPageBody({super.key});
@@ -84,38 +84,37 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             ],
           ),
         ), //Popular - pairing
-        Container(
-          margin: EdgeInsets.only(top: Dimensions.height20),
-          height: 900,
-          child: ListView.builder(
-            physics: NeverScrollableScrollPhysics(),
-            //shrinkWrap: true,
-            itemCount: 10,
-            itemBuilder: (context, index) {
-              return Container(
-                margin: EdgeInsets.only(
-                    left: Dimensions.width20,
-                    right: Dimensions.width20,
-                    bottom: Dimensions.height10),
-                child: Row(
-                  children: [
-                    //img section
-                    Container(
-                      height: Dimensions.ListViewImgSize, //120
-                      width: Dimensions.ListViewImgSize,
-                      decoration: BoxDecoration(
-                        borderRadius:
-                            BorderRadius.circular(Dimensions.radius20),
-                        color: Colors.white,
-                        image: const DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage('assets/image/product2.png'),
-                        ),
+        //list of food and img
+        ListView.builder(
+          physics: NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return Container(
+              margin: EdgeInsets.only(
+                  left: Dimensions.width20,
+                  right: Dimensions.width20,
+                  bottom: Dimensions.height10),
+              child: Row(
+                children: [
+                  //img section
+                  Container(
+                    height: Dimensions.listViewImgSize, //120
+                    width: Dimensions.listViewImgSize,
+                    decoration: BoxDecoration(
+                      borderRadius:
+                          BorderRadius.circular(Dimensions.radius20),
+                      color: Colors.white,
+                      image: const DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage('assets/image/product2.png'),
                       ),
                     ),
-                    //Text container
-                    Container(
-                      height: 100,
+                  ),
+                  //Text container
+                  Expanded(
+                    child: Container(
+                      height: Dimensions.listViewTextContSize,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
                           topRight: Radius.circular(Dimensions.radius20),
@@ -159,12 +158,12 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                           ],
                         ),
                       ),
-                    )
-                  ],
-                ),
-              );
-            },
-          ),
+                    ),
+                  )
+                ],
+              ),
+            );
+          },
         )
       ],
     );
