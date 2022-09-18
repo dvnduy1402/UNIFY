@@ -9,7 +9,7 @@ class BigText extends StatelessWidget {
 
   BigText(
       {Key? key,
-      this.color = const Color(0xFFccc7c5),
+      this.color = const Color(0xFF332d2b),
       required this.text,
       this.size = 20,
       this.overflow = TextOverflow.fade})
