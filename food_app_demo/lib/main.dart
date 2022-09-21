@@ -1,6 +1,8 @@
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:food_app_demo/pages/food/popular_detail.dart';
+import 'package:food_app_demo/pages/food/recommended_food_detail.dart';
 import 'package:food_app_demo/pages/home/home_page.dart';
 import 'package:get/get.dart';
 
@@ -14,10 +16,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Home Page',
-      home: PopularFoodDetail(),
+      theme: ThemeData(
+        primarySwatch: Colors.blue
+      ),
+      home: RecommendedFoodDetail(),
     );
   }
 }
