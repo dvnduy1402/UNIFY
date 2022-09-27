@@ -1,7 +1,8 @@
 import 'package:food_app_demo/data/repository/popular_product_repo.dart';
 import 'package:get/get.dart';
 
-class PopularProductController extends GetxService{
+
+class PopularProductController extends GetxController{
   final PopularProductRepo popularProductRepo;
   PopularProductController({required this.popularProductRepo});
   List<dynamic> _popularProductList = [];
@@ -11,7 +12,7 @@ class PopularProductController extends GetxService{
     if(response.statusCode==200){
       _popularProductList = [];
       //_popularProductList.addAll();
-      //update();
+      update();
     }else{
 
     }
