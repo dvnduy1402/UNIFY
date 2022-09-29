@@ -19,12 +19,13 @@ class RecommendedFoodDetail extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
+            automaticallyImplyLeading: false,
             title: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 GestureDetector(
                   onTap: () {
-                    Get.off(HomePage());
+                    Get.back();
                   },
                   child: AppIcon(icon: Icons.clear),
                 ),

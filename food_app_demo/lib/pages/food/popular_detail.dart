@@ -7,6 +7,7 @@ import 'package:food_app_demo/widgets/big_text.dart';
 import 'package:food_app_demo/widgets/count_num.dart';
 import 'package:food_app_demo/widgets/expandable_text.dart';
 import 'package:food_app_demo/widgets/panel_column.dart';
+import 'package:get/get.dart';
 
 class PopularFoodDetail extends StatelessWidget {
   const PopularFoodDetail({Key? key}) : super(key: key);
@@ -39,7 +40,11 @@ class PopularFoodDetail extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                AppIcon(icon: Icons.arrow_back_ios_new),
+                GestureDetector(
+                  onTap: () {
+                    Get.back();
+                  },
+                  child: AppIcon(icon: Icons.arrow_back_ios_new)),
                 AppIcon(icon: Icons.shopping_cart_outlined)
               ],
             ),
@@ -67,7 +72,9 @@ class PopularFoodDetail extends StatelessWidget {
                   SizedBox(height: Dimensions.height20),
                   BigText(text: 'Introduce'),
                   SizedBox(height: Dimensions.height20),
-                  Expanded(child: SingleChildScrollView(child: ExpandableText(text: RandomText.text)))
+                  Expanded(
+                      child: SingleChildScrollView(
+                          child: ExpandableText(text: RandomText.text)))
                 ],
               ),
             ),
@@ -93,47 +100,12 @@ class PopularFoodDetail extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(Dimensions.radius30)),
-              child: Container(
-                height: Dimensions.navbarSize,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(Dimensions.radius30),
-                  color: AppColors.buttonBackgroundColor,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(left: Dimensions.height20),
-                      padding: EdgeInsets.only(
-                          top: Dimensions.height15,
-                          bottom: Dimensions.height15,
-                          left: Dimensions.height20,
-                          right: Dimensions.height20),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(Dimensions.radius30)),
-                      child: Row(
-                        children: [
-                          Icon(Icons.remove, color: AppColors.mainBlackColor),
-                          BigText(text: '0'),
-                          Icon(Icons.add, color: AppColors.mainBlackColor)
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(right: Dimensions.height20),
-                      padding: EdgeInsets.only(
-                          top: Dimensions.height15,
-                          left: Dimensions.height10,
-                          bottom: Dimensions.height15,
-                          right: Dimensions.height10),
-                      decoration: BoxDecoration(
-                          color: AppColors.mainColor,
-                          borderRadius: BorderRadius.circular(Dimensions.radius30)),
-                      child: BigText(text: '10\$ | add to cart'),
-                    )
-                  ],
-                ),
+              child: Row(
+                children: [
+                  Icon(Icons.remove, color: AppColors.mainBlackColor),
+                  BigText(text: '0'),
+                  Icon(Icons.add, color: AppColors.mainBlackColor)
+                ],
               ),
             ),
             Container(

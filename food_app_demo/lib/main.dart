@@ -18,11 +18,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Home Page',
-      getPages: appPages,
-      theme: ThemeData(
-        primarySwatch: Colors.blue
-      ),
       home: HomePage(),
+      getPages: RouteHelper.routes,
+      initialRoute: RouteHelper.initial,
     );
   }
 }
