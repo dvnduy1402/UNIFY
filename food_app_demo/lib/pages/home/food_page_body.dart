@@ -179,9 +179,9 @@ Widget _buildPageItem(int index) {
   return Stack(
     children: [
       GestureDetector(
-        onTap: (() {
-          Get.off(RecommendedFoodDetail());
-        }),
+        onTap: () {
+          Get.to(()=>RecommendedFoodDetail());
+        },
         child: Container(
           height: Dimensions.pageViewContainer, // height of 1st stack
           margin: const EdgeInsets.only(left: 5, right: 5),
