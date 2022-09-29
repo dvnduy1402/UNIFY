@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_app_demo/home/home_page.dart';
+import 'package:food_app_demo/main.dart';
 import 'package:food_app_demo/utils/colors.dart';
 import 'package:food_app_demo/utils/dimensions.dart';
 import 'package:food_app_demo/utils/introduce_detail_text.dart';
@@ -20,7 +22,13 @@ class RecommendedFoodDetail extends StatelessWidget {
             title: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                AppIcon(icon: Icons.clear),
+                GestureDetector(
+                  onTap: () {
+                    Get.off(HomePage());
+                  },
+                  child: AppIcon(icon: Icons.clear),
+                ),
+                
                 AppIcon(icon: Icons.shopping_cart_outlined),
               ],
             ),

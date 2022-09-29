@@ -1,9 +1,15 @@
+
+// ignore: avoid_web_libraries_in_flutter
+
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:food_app_demo/navigation.dart';
+import 'package:food_app_demo/pages/food/recommended_food_detail.dart';
 import 'package:food_app_demo/utils/colors.dart';
 import 'package:food_app_demo/utils/dimensions.dart';
 import 'package:food_app_demo/widgets/icon_and_text.dart';
 import 'package:food_app_demo/widgets/small_text.dart';
+import 'package:get/get.dart';
 
 import '../../widgets/big_text.dart';
 
@@ -168,21 +174,25 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       ],
     );
   }
-}
 
 Widget _buildPageItem(int index) {
   return Stack(
     children: [
-      Container(
-        height: Dimensions.pageViewContainer, // height of 1st stack
-        margin: const EdgeInsets.only(left: 5, right: 5),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(Dimensions.radius20),
-          color:
-              index.isEven ? const Color(0xFF69c5df) : const Color(0xFF9294cc),
-          image: const DecorationImage(
-            fit: BoxFit.cover, //fit img = container
-            image: AssetImage("assets/image/product1.png"),
+      GestureDetector(
+        onTap: (() {
+          Get.off(RecommendedFoodDetail());
+        }),
+        child: Container(
+          height: Dimensions.pageViewContainer, // height of 1st stack
+          margin: const EdgeInsets.only(left: 5, right: 5),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(Dimensions.radius20),
+            color:
+                index.isEven ? const Color(0xFF69c5df) : const Color(0xFF9294cc),
+            image: const DecorationImage(
+              fit: BoxFit.cover, //fit img = container
+              image: AssetImage("assets/image/product1.png"),
+            ),
           ),
         ),
       ),
@@ -268,3 +278,7 @@ Widget _buildPageItem(int index) {
     ],
   );
 }
+
+
+}
+

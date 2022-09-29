@@ -1,14 +1,13 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:food_app_demo/pages/food/popular_detail.dart';
-import 'package:food_app_demo/pages/food/recommended_food_detail.dart';
+import 'package:food_app_demo/navigation.dart';
 import 'package:food_app_demo/pages/home/home_page.dart';
 import 'package:get/get.dart';
 
-
 void main(List<String> args) {
-  runApp(const MyApp());
+
+
+  runApp( const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -19,10 +18,11 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Home Page',
+      getPages: appPages,
       theme: ThemeData(
         primarySwatch: Colors.blue
       ),
-      home: RecommendedFoodDetail(),
+      home: HomePage(),
     );
   }
 }

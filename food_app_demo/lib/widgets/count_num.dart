@@ -28,6 +28,7 @@ class _CountNumState extends State<CountNum> {
             onTap: () {
               setState(() {
                 counting = counting - 1;
+                if(counting<=0) counting = 0;
               });
             },
             child: AppIcon(
