@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app_demo/controller/recommended_food_controller.dart';
 import 'package:food_app_demo/utils/colors.dart';
 import 'package:food_app_demo/utils/dimensions.dart';
 import 'package:food_app_demo/utils/introduce_detail_text.dart';
@@ -13,6 +14,7 @@ class RecommendedFoodDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    RecommendedFoodController _recommendFoodController = Get.find();
     return Scaffold(
       body: CustomScrollView(
         slivers: [
@@ -51,10 +53,13 @@ class RecommendedFoodDetail extends StatelessWidget {
             backgroundColor: AppColors.mainColor,
             expandedHeight: Dimensions.pageView,
             flexibleSpace: FlexibleSpaceBar(
-              background: Image.asset(
-                "assets/image/product2.png",
+              background: FadeInImage(
+                image: NetworkImage(
+                  _recommendFoodController.allImages[1],
+                ),
                 width: double.maxFinite,
-                fit: BoxFit.cover,
+                fit: BoxFit.cover, 
+                placeholder: AssetImage('assets/image/product1.png'),
               ),
             ),
           ),
