@@ -6,25 +6,29 @@ class RecommendedFoodController extends GetxController {
 
   @override
   void onReady() {
-    getAllImage();
+    // getAllImage();
+    testing();
     super.onReady();
   }
 
-  Future<void> getAllImage() async {
-    List<String> imageName = [
-      'product1',
-      'product2',
-      'product3',
-      'product4',
-      'product5',
-    ];
-    try {
-      for (var img in imageName) {
-      final imgUrl =  await Get.find<FirebaseStorageServices>().getImage(img);
-      allImages.add(imgUrl!);
-      }
-    } catch (e) {
-      print(e);
-    }
+  // Future<void> getAllImage() async {
+  //   List<String> imageName = [
+  //     'product1',
+  //     'product2',
+  //     'product3',
+  //     'product4',
+  //     'product5',
+  //   ];
+  //   try {
+  //     for (var img in imageName) {
+  //     final imgUrl =  await Get.find<FirebaseStorageServices>().getImage(img);
+  //     allImages.add(imgUrl!);
+  //     }
+  //   } catch (e) {
+  //     print(e);
+  //   }
+  // }
+  void testing(){
+    print('data is uploading');
   }
 }

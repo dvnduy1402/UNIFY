@@ -1,12 +1,14 @@
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:food_app_demo/firebase_options.dart';
 import 'package:food_app_demo/navigation.dart';
 import 'package:food_app_demo/pages/home/home_page.dart';
 import 'package:get/get.dart';
 
-void main(List<String> args) {
-
-
+Future<void> main(List<String> args) async {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp( const MyApp());
 }
 

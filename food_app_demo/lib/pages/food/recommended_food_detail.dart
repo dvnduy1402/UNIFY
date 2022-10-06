@@ -10,11 +10,11 @@ import 'package:food_app_demo/widgets/expandable_text.dart';
 import 'package:get/get.dart';
 
 class RecommendedFoodDetail extends StatelessWidget {
-  const RecommendedFoodDetail({Key? key}) : super(key: key);
-
+  RecommendedFoodDetail({Key? key}) : super(key: key);
+  // RecommendedFoodController controller = Get.put(RecommendedFoodController());
   @override
   Widget build(BuildContext context) {
-    RecommendedFoodController _recommendFoodController = Get.find();
+    
     return Scaffold(
       body: CustomScrollView(
         slivers: [
@@ -53,13 +53,11 @@ class RecommendedFoodDetail extends StatelessWidget {
             backgroundColor: AppColors.mainColor,
             expandedHeight: Dimensions.pageView,
             flexibleSpace: FlexibleSpaceBar(
-              background: FadeInImage(
-                image: NetworkImage(
-                  _recommendFoodController.allImages[1],
-                ),
+              background: Image.asset(
+                  'assets/image/product1.png',
                 width: double.maxFinite,
                 fit: BoxFit.cover, 
-                placeholder: AssetImage('assets/image/product1.png'),
+                
               ),
             ),
           ),
