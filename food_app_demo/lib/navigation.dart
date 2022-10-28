@@ -10,12 +10,7 @@ class RouteHelper {
   static const popularFood = '/popular_detail';
   static List<GetPage> routes = [
     GetPage(name: initial, page: () => HomePage()),
-    GetPage(
-        name: recommendFood,
-        page: () => RecommendedFoodDetail(),
-        binding: BindingsBuilder(() {
-          Get.put(RecommendedFoodController());
-        })),
+    GetPage(name: recommendFood, page: () => RecommendedFoodDetail()),
     GetPage(name: popularFood, page: () => PopularFoodDetail()),
   ];
 }

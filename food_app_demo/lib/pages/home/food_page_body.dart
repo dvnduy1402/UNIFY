@@ -113,14 +113,12 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                     left: Dimensions.width20,
                     right: Dimensions.width20,
                     bottom: Dimensions.height10),
-                color: Colors.red,
                 child: Row(
                   children: [
                     //img section
                     Container(
-                      
-                      height: Dimensions.height20*6, //120
-                      width: Dimensions.height20*6,
+                      height: Dimensions.height20 * 6, //120
+                      width: Dimensions.height20 * 6,
                       decoration: BoxDecoration(
                         borderRadius:
                             BorderRadius.circular(Dimensions.radius20),
